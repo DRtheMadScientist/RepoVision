@@ -1,5 +1,5 @@
 #Read me Hough
-# Ce projet à été fait en C++ sur visualstudio il est constitué d'un main hough.cpp et de 4 en têtes
+# Ce projet à été fait en C++ sur visualstudio il est constitué d'un main hough.cpp et de 4 headers
 # Ce projet permet d'identifier des lignes. La transformée de Hough est nottament utilisé par les caméras présentent sur les voitures récentes.
 #
 
