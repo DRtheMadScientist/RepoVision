@@ -93,202 +93,6 @@
 	PHIIMIN0=-180.D0
 	PHIIMAX0=360.D0
 
-!	write(6,*) PHIIMIN0,PHIIMAX0
-	
-	
-!        ALPHA10=1.979782D0
-!        ALPHA20=2.525696D0
-!        ALPHA30=32.534356D0
-!        ALPHA40=-8.070852D0
-!        ALPHA50=10.020107D0
-!        ALPHA60=-78.450864D0 
-!        GAMMA0=148.922529D0
-!        DELTA0 =106.937618D0
-!        TETAI0=45.D0
-!        PHII0=175.D0
-!        TETAO0=60.D0
-!        PHIO0=185.D0   
-
-
-        
-        
-	!write(6,*) XDECBRAS,XDECAVBRAS,XDECPOIGNET
-	
-!	!on dessine toute la scène
-!	!le plateau 
-!	CALL AFFICHEPLATEAU(GAMMA0,
-!     &	XEPPLATEAU,XLCYLBASE,PX,PY,
-!     &  XPLA,YPLA,ZPLA,IRPLA,NPPLA,NFPLA)
-!	!le robot 
-!	CALL AFFICHEROBOT(
-!     &	ALPHA10,ALPHA20,ALPHA30,ALPHA40,ALPHA50,ALPHA60,
-!     &  XLCYLBASE,XLCYLBRAS,XLCYLAVBRAS,XLCYLPOIGNEE,XECHAN,
-!     &  XDECBRAS,XDECAVBRAS,XDECPOIGNET,XCOUDE,      
-!     &  XROB,YROB,ZROB,IRROB,NPROB,NFROB,XTRECH)
-!        CALL ROTROBOT(GAMMA0,PX,PY,
-!     &	XROB,YROB,ZROB,IRROB,NPROB,NFROB,
-!     &  XROB2,YROB2,ZROB2,IRROB2,NPROB2,NFROB2,XTRECH2)
-!	CALL TRANSXTRANS2(XTRECH2,XTRECH)
-!        !l 'echantillon
-!	CALL ECHANTILLON(XECHAN,XTRECH2,
-!     &  XECH,YECH,ZECH,IRECH,NPECH,NFECH)
-!	!le detecteur
-!	CALL DETECTEUR(PZ,DELTA0,XLBRASDETEC,
-!     &  XDET,YDET,ZDET,IRDET,NPDET,NFDET)	
-!	!le laser
-!	CALL DETECTEUR(PZ,90.D0,XLBRASLAS,
-!     &  XLAS,YLAS,ZLAS,IRLAS,NPLAS,NFLAS)
-!        !l'echantillon dans le repere echantillon
-!   	CALL ECH0(XECH0,YECH0,ZECH0,IRECH0,NPECH0,NFECH0)	   
-!        ! le laser dasn le repere echantillon
-!        CALL LAS0(PHII0,TETAI0,XLAS0,YLAS0,ZLAS0,IRLAS0,NPLAS0,NFLAS0)	
-!        ! le detecteur dasn le repere echantillon
-!        CALL LAS0(PHIO0,TETAO0,XDET0,YDET0,ZDET0,IRDET0,NPDET0,NFDET0)	
-     
-
-
- 
-    	  
-!	OPEN(20,file='vuetecplot2')
-!	WRITE(20,'(a)')  'TITLE="jj"' 
-!	WRITE(20,'(a)')  ' VARIABLES = "X","Y","Z"'  	
-!	WRITE(20,*) 'ZONE T="robot" ET=TRIANGLE, F=FEBLOCK, N='
-!     &	,NPROB2,' E=',NFROB2
-!         WRITE(20,'(8e15.7)') (XROB2(J),J=1,NPROB2)
-!	 WRITE(20,'(8e15.7)') (YROB2(J),J=1,NPROB2)
-!	 WRITE(20,'(8e15.7)') (ZROB2(J),J=1,NPROB2)
-!	 DO I=1,NFROB2
-!	 WRITE(20,'(3i8)') (IRROB2(IJ,I),IJ=1,3)
-!	 ENDDO 
-!	WRITE(20,*) 'ZONE T="plaque" ET=TRIANGLE, F=FEBLOCK, N='
-!     &	,NPPLA,' E=',NFPLA
-!         WRITE(20,'(8e15.7)') (XPLA(J),J=1,NPPLA)
-!	 WRITE(20,'(8e15.7)') (YPLA(J),J=1,NPPLA)
-!	 WRITE(20,'(8e15.7)') (ZPLA(J),J=1,NPPLA)
-!	 DO I=1,NFPLA
-!	 WRITE(20,'(3i8)') (IRPLA(IJ,I),IJ=1,3)
-!	 ENDDO 	 
-!	WRITE(20,*) 'ZONE T="detec" ET=TRIANGLE, F=FEBLOCK, N='
-!     &	,NPDET,' E=',NFDET
-!         WRITE(20,'(8e15.7)') (XDET(J),J=1,NPDET)
-!	 WRITE(20,'(8e15.7)') (YDET(J),J=1,NPDET)
-!	 WRITE(20,'(8e15.7)') (ZDET(J),J=1,NPDET)
-!	 DO I=1,NFDET
-!	 WRITE(20,'(3i8)') (IRDET(IJ,I),IJ=1,3)
-!	 ENDDO 	
-!	WRITE(20,*) 'ZONE T="laser" ET=TRIANGLE, F=FEBLOCK, N='
-!     &	,NPLAS,' E=',NFLAS
-!         WRITE(20,'(8e15.7)') (XLAS(J),J=1,NPLAS)
-!	 WRITE(20,'(8e15.7)') (YLAS(J),J=1,NPLAS)
-!	 WRITE(20,'(8e15.7)') (ZLAS(J),J=1,NPLAS)
-!	 DO I=1,NFLAS
-!	 WRITE(20,'(3i8)') (IRLAS(IJ,I),IJ=1,3)
-!	 ENDDO 	
-!	WRITE(20,*) 'ZONE T="echan" ET=TRIANGLE, F=FEBLOCK, N='
-!     &	,NPECH,' E=',NFECH
-!         WRITE(20,'(8e15.7)') (XECH(J),J=1,NPECH)
-!	 WRITE(20,'(8e15.7)') (YECH(J),J=1,NPECH)
-!	 WRITE(20,'(8e15.7)') (ZECH(J),J=1,NPECH)
-!	 DO I=1,NFECH
-!	 WRITE(20,'(3i8)') (IRECH(IJ,I),IJ=1,3)
-!	 ENDDO 	
-!	 WRITE(20,*) 'ZONE T="echan0" ET=TRIANGLE, F=FEBLOCK, N='
-!     &	,NPECH0,' E=',NFECH0
-!         WRITE(20,'(8e15.7)') (XECH0(J),J=1,NPECH0)
-!	 WRITE(20,'(8e15.7)') (YECH0(J),J=1,NPECH0)
-!	 WRITE(20,'(8e15.7)') (ZECH0(J),J=1,NPECH0)
-!	 DO I=1,NFECH0
-!	 WRITE(20,'(3i8)') (IRECH0(IJ,I),IJ=1,3)
-!	 ENDDO 	
-!	WRITE(20,*) 'ZONE T="laser0" ET=TRIANGLE, F=FEBLOCK, N='
-!     &	,NPLAS0,' E=',NFLAS0
-!         WRITE(20,'(8e15.7)') (XLAS0(J),J=1,NPLAS0)
-!	 WRITE(20,'(8e15.7)') (YLAS0(J),J=1,NPLAS0)
-!	 WRITE(20,'(8e15.7)') (ZLAS0(J),J=1,NPLAS0)
-!	 DO I=1,NFLAS0
-!	 WRITE(20,'(3i8)') (IRLAS0(IJ,I),IJ=1,3)
-!	 ENDDO 	
-!	WRITE(20,*) 'ZONE T="detec0" ET=TRIANGLE, F=FEBLOCK, N='
-!     &	,NPDET0,' E=',NFDET0
-!         WRITE(20,'(8e15.7)') (XDET0(J),J=1,NPDET0)
-!	 WRITE(20,'(8e15.7)') (YDET0(J),J=1,NPDET0)
-!	 WRITE(20,'(8e15.7)') (ZDET0(J),J=1,NPDET0)
-!	 DO I=1,NFDET0
-!	 WRITE(20,'(3i8)') (IRDET0(IJ,I),IJ=1,3)
-!	 ENDDO 	
-!	 close(20)
-
-!        write(6,'(4e15.6)') XTRECH2(1,1),XTRECH2(1,2),
-!     &        XTRECH2(1,3),XTRECH2(1,4)
-!        write(6,'(4e15.6)') XTRECH2(2,1),XTRECH2(2,2),
-!     &        XTRECH2(2,3),XTRECH2(2,4)
-!        write(6,'(4e15.6)') XTRECH2(3,1),XTRECH2(3,2),
-!     &        XTRECH2(3,3),XTRECH2(3,4)     
-!        write(6,'(4e15.6)') XTRECH2(4,1),XTRECH2(4,2),
-!     &        XTRECH2(4,3),XTRECH2(4,4)          
-
-!        write(6,'(4e15.6)') XTRECH(1,1),XTRECH(1,2),
-!     &        XTRECH(1,3),XTRECH(1,4)
-!        write(6,'(4e15.6)') XTRECH(2,1),XTRECH(2,2),
-!     &        XTRECH(2,3),XTRECH(2,4)
-!        write(6,'(4e15.6)') XTRECH(3,1),XTRECH(3,2),
-!     &        XTRECH(3,3),XTRECH(3,4)     
-!        write(6,'(4e15.6)') XTRECH(4,1),XTRECH(4,2),
-!     &        XTRECH(4,3),XTRECH(4,4)      
-     
-         !stop
-     
-      !specifique
-
-!      	AL1OLD=0.d0
-!	AL2OLD=0.d0
-!	AL3OLD=0.d0
-!	AL4OLD=0.d0
-!	AL5OLD=0.d0
-!	AL6OLD=0.d0
-!      
-       !je recupere XM60
-     
-!        XM60(1,1)=XTRECH(1,1)
-!        XM60(1,2)=XTRECH(1,2)
-!        XM60(1,3)=XTRECH(1,3)        
-!        XM60(2,1)=XTRECH(2,1)
-!        XM60(2,2)=XTRECH(2,2)
-!        XM60(2,3)=XTRECH(2,3)        
-!        XM60(3,1)=XTRECH(3,1)
-!        XM60(3,2)=XTRECH(3,2)
-!        XM60(3,3)=XTRECH(3,3)        
-
-!        !je recupere P par rapport à R0
-!        PXB=XTRECH(1,4)
-!        PYB=XTRECH(2,4)
-!        PZB=XTRECH(3,4) 
-
-
-!         !je recupere k6
-!        XK0=XM60(1,3)
-!	YK0=XM60(2,3)
-!	ZK0=XM60(3,3)       
-        
-        !special !je rajoute l'epaisseur echantillon
-        !a virer quand je fias la routine finale
-        
-!        PX=PXB+0.005D0*XK0
-!        PY=PYB+0.005D0*YK0
-!        PZ=PZB+0.005D0*ZK0
-	
-        
-!	CALL SOLVEROBOT2(XM60,PHIO0,
-!     &  PX,PY,PZ,XK0,YK0,ZK0,
-!     &  XLCYLPOIGNEE,XDECPOIGNET,XLCYLBASE,
-!     &	XLCYLBRAS,XDECBRAS,XLCYLAVBRAS,XDECAVBRAS,
-!     &  AL1MIN,AL2MIN,AL3MIN,AL4MIN,AL5MIN,AL6MIN,
-!     &  AL1MAX,AL2MAX,AL3MAX,AL4MAX,AL5MAX,AL6MAX,     
-!     &  AL1OLD,AL2OLD,AL3OLD,AL4OLD,AL5OLD,AL6OLD, 
-!     &  IFIND,AL1F,AL2F,AL3F,AL4F,AL5F,AL6F)        
-
- 
-	 
 !	stop
 	
         write(6,*) 'lecture de la consigne'	
@@ -385,7 +189,7 @@
          ENDDO         
          CLOSE(30)         
         !XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxx      
-        ELSEIF(IMODE.EQ.4) THEN !phii fixe, tetai plage de 0 à 90, tetao et phio fixe aussi
+        ELSEIF(IMODE.EQ.4) THEN !phii fixe, tetai plage de 0 Ã  90, tetao et phio fixe aussi
 	CALL MODE4(TETAI0,PHII0,TETAO0,PHIO0,DELTA0,
      &  NDELTA0,NGAMMA0,IDEMI,PHIIMIN0,PHIIMAX0,
      &  NTETAI0,NPHII0,NTETAO0,PHIIDEB0,PHIIFIN0,
@@ -415,7 +219,7 @@
      &  TABALPHA50,TABALPHA60,TABGAMMA0,TABDELTA0,
      &  TABTETAI0,TABPHII0,TABTETAO0,TABPHIO0,NSAMPLE)
          !XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxx      
-        ELSEIF(IMODE.EQ.6) THEN !phii fixe, tetai fixe,  phiO = phii ou phii+PI tetao plage de 0 à 90
+        ELSEIF(IMODE.EQ.6) THEN !phii fixe, tetai fixe,  phiO = phii ou phii+PI tetao plage de 0 Ã  90
         CALL MODE6(TETAI0,PHII0,TETAO0,PHIO0,DELTA0,
      &  NDELTA0,NGAMMA0,IDEMI,PHIIMIN0,PHIIMAX0,
      &  NTETAI0,NPHII0,NTETAO0,PHIIDEB0,PHIIFIN0,
@@ -430,7 +234,7 @@
      &  TABALPHA50,TABALPHA60,TABGAMMA0,TABDELTA0,
      &  TABTETAI0,TABPHII0,TABTETAO0,TABPHIO0,NSAMPLE)          
          !XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxx      
-         ELSEIF(IMODE.EQ.7) THEN !phii fixe, tetai plage de 0 à 90, phi0 = phii ou phii+PI tetao plage de 0 à 90
+         ELSEIF(IMODE.EQ.7) THEN !phii fixe, tetai plage de 0 Ã  90, phi0 = phii ou phii+PI tetao plage de 0 Ã  90
 
          
          
@@ -461,20 +265,7 @@
         BETA0=BETA*180.D0/PI
         GAMMA0=GAMMA*180.D0/PI
         DELTA0=DELTA*180.D0/PI
-        !write(6,*) ALPHA0,BETA0,GAMMA0,DELTA0
-!        XK=XM60A(1,3)
-!	YK=XM60A(2,3)
-!	ZK=XM60A(3,3)
-!	XPP=PX-XK*XLCYLPOIGNEE
-!	YPP=PY-YK*XLCYLPOIGNEE
-!	ZPP=PZ-ZK*XLCYLPOIGNEE-XLCYLBASE	
-!	XM60=XM60A
-!	CALL SOLVEROBOT(XPP,YPP,ZPP,XM60,
-!     &	XLCYLBRAS,XLCYLAVBRAS,
-!     &  AL1MIN,AL2MIN,AL3MIN,AL4MIN,AL5MIN,AL6MIN,
-!     &  AL1MAX,AL2MAX,AL3MAX,AL4MAX,AL5MAX,AL6MAX,     
-!     &  AL1OLD,AL2OLD,AL3OLD,AL4OLD,AL5OLD,AL6OLD, 
-!     &  IFIND,AL1F,AL2F,AL3F,AL4F,AL5F,AL6F)	
+     
 	XM60=XM60A
 	XK0=XM60(1,3)
 	YK0=XM60(2,3)
@@ -520,7 +311,7 @@
 	NSAMPLE=K0   	
 	
       !XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxx        
-        ELSEIF(imode.eq.8) THEN !!phii fixe, tetai plage de 0 à 90, on balaye le demi hemisphere
+        ELSEIF(imode.eq.8) THEN !!phii fixe, tetai plage de 0 Ã  90, on balaye le demi hemisphere
          IDEMI=2
          TETAIDEB0=0.D0
          TETAIFIN0=90.D0
@@ -536,7 +327,7 @@
         ! write(6,*) 'a2',KA,TETAI0,PHII0,ALPHA0,BETA0         
          DELTADEB0=90.D0  !debut
          DELTAFIN0=180.D0+TETAI0 !fin
-         DELTAINC0=180.D0-BETA0 !passage obligé
+         DELTAINC0=180.D0-BETA0 !passage obligÃ©
          !delta moyen
          deltamoyen=(DELTAFIN0-DELTADEB0)/NDELTA0
          !write(6,*) 'a3',DELTADEB0,DELTAINC0,DELTAFIN0
@@ -607,20 +398,7 @@
           ! write(6,*) 'c2',K,K2,TETAI0,PHII0          
            TETAO0=TETAO*180.D0/PI
            PHIO0=PHIO*180.D0/PI     
-           !determination robot 
-! 	   XK=XM60A(1,3)
-!	   YK=XM60A(2,3)
-!	   ZK=XM60A(3,3)
-!	   XPP=PX-XK*XLCYLPOIGNEE
-!	   YPP=PY-YK*XLCYLPOIGNEE
-!	   ZPP=PZ-ZK*XLCYLPOIGNEE-XLCYLBASE	
-!	   XM60=XM60A
-!	   CALL SOLVEROBOT(XPP,YPP,ZPP,XM60,
-!     &	   XLCYLBRAS,XLCYLAVBRAS,
-!     &     AL1MIN,AL2MIN,AL3MIN,AL4MIN,AL5MIN,AL6MIN,
-!     &     AL1MAX,AL2MAX,AL3MAX,AL4MAX,AL5MAX,AL6MAX,     
-!     &     AL1OLD,AL2OLD,AL3OLD,AL4OLD,AL5OLD,AL6OLD, 
-!     &     IFIND,AL1F,AL2F,AL3F,AL4F,AL5F,AL6F)	
+       
 	XM60=XM60A
 	XK0=XM60(1,3)
 	YK0=XM60(2,3)
@@ -668,7 +446,7 @@
           ! write(6,*) 'ici',NSAMPLE 
  
 !XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxx        
-        ELSEIF(imode.eq.9) THEN !!phii plage , tetai plage de 0 à 90, on balaye le hemisphere
+        ELSEIF(imode.eq.9) THEN !!phii plage , tetai plage de 0 Ã  90, on balaye le hemisphere
          IDEMI=1
          PHIIDEB0=MAX(PHIIDEB0,PHIIMIN0)
          PHIIFIN0=MIN(PHIIFIN0,PHIIMAX0)
@@ -689,7 +467,7 @@
          !write(6,*) 'a2',KA,TETAI0,PHII0,ALPHA0,BETA0         
          DELTADEB0=90.D0  !debut
          DELTAFIN0=180.D0+TETAI0 !fin
-         DELTAINC0=180.D0-BETA0 !passage obligé
+         DELTAINC0=180.D0-BETA0 !passage obligÃ©
          !delta moyen
          deltamoyen=(DELTAFIN0-DELTADEB0)/NDELTA0
         ! write(6,*) 'a3',DELTADEB0,DELTAINC0,DELTAFIN0
@@ -760,20 +538,7 @@
            !write(6,*) 'c2',K,K2,TETAI0,PHII0          
            TETAO0=TETAO*180.D0/PI
            PHIO0=PHIO*180.D0/PI     
-           !determination robot 
- !	   XK=XM60A(1,3)
-!	   YK=XM60A(2,3)
-!	   ZK=XM60A(3,3)
-!	   XPP=PX-XK*XLCYLPOIGNEE
-!	   YPP=PY-YK*XLCYLPOIGNEE
-!	   ZPP=PZ-ZK*XLCYLPOIGNEE-XLCYLBASE	
-!	   XM60=XM60A
-!	   CALL SOLVEROBOT(XPP,YPP,ZPP,XM60,
-!     &	   XLCYLBRAS,XLCYLAVBRAS,
-!     &     AL1MIN,AL2MIN,AL3MIN,AL4MIN,AL5MIN,AL6MIN,
-!     &     AL1MAX,AL2MAX,AL3MAX,AL4MAX,AL5MAX,AL6MAX,     
-!     &     AL1OLD,AL2OLD,AL3OLD,AL4OLD,AL5OLD,AL6OLD, 
-!     &     IFIND,AL1F,AL2F,AL3F,AL4F,AL5F,AL6F)	
+     
 	XM60=XM60A
 	XK0=XM60(1,3)
 	YK0=XM60(2,3)
@@ -847,23 +612,6 @@
         
         
 
-        !TEST
-!        CALL TETAPHI2ALPHABETA(TETAI0,PHII0,
-!     &  ALPHA,BETA,XM60A)	
-!         CALL ABGDTOTETAPHI(ALPHA0,BETA0,GAMMA0,DELTA0,
-!     &  TETAI,PHII,TETAO,PHIO)       
-!     	write(6,*) 'verification teta phi'
-!        write(6,*) 'tetai',TETAI*180.D0/PI
-!        write(6,*) 'phii',PHII*180.D0/PI      
-!        write(6,*) 'tetao',TETAO*180.D0/PI
-!        write(6,*) 'phio',PHIO*180.D0/PI 
-!        write(6,*)        
-!        write(6,*) ALPHA,BETA
-!        write(6,*) 'xm60'
-!	write(6,*) XM60A(1,1),XM60A(1,2),XM60A(1,3)
-!	write(6,*) XM60A(2,1),XM60A(2,2),XM60A(2,3)
-!	write(6,*) XM60A(3,1),XM60A(3,2),XM60A(3,3)
-	
 
 
         
@@ -1240,7 +988,7 @@
          BETA0=BETA*180.D0/PI
          DELTADEB0=90.D0  !debut
          DELTAFIN0=180.D0+TETAI0 !fin
-         DELTAINC0=180.D0-BETA0 !passage obligé
+         DELTAINC0=180.D0-BETA0 !passage obligÃ©
          !delta moyen
          deltamoyen=(DELTAFIN0-DELTADEB0)/NDELTA0
    !      write(6,*) DELTADEB0,DELTAINC0,DELTAFIN0
@@ -1618,7 +1366,7 @@
 	!	write(6,*) 'jio',AL6,ALR6
 	!on a trouve une solution et elle est valide
 	!je la grade si le chemin parcouru est le moins long
-	!par rapport à la précédente position
+	!par rapport Ã  la prÃ©cÃ©dente position
 	IF(IERREUR.eq.0) THEN
 	DAL1=ABS(AL1-AL1OLD)
 	DAL2=ABS(AL2-AL2OLD)
