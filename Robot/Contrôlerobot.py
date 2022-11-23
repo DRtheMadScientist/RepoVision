@@ -355,7 +355,7 @@ class BRDF(QMainWindow):
         volute=0
         angle = min_det
         pas = (max_det- min_det)/nb
-        E = np.loadtxt('C:\Users\ManipBRDF\Desktop\BRDF\DjibrilBrdf\ROBOTV3\output\samples',skiprows=3)
+        E = np.loadtxt('C:\Users\ManipBRDF\Desktop\BRDF\djabrilBrdf\ROBOTV3\output\samples',skiprows=3)
         
         print(E[1,2])
 
@@ -448,7 +448,7 @@ class BRDF(QMainWindow):
         volute=0
         angle = min_det
         pas = (max_det- min_det)/nb
-        E = np.loadtxt('C:\Users\ManipBRDF\Desktop\BRDF\DjibrilBrdf\ROBOTV3\output\samples',skiprows=3)
+        E = np.loadtxt('C:\Users\ManipBRDF\Desktop\BRDF\djabrilBrdf\ROBOTV3\output\samples',skiprows=3)
         print(E[0,2])
 
 
@@ -509,7 +509,7 @@ class BRDF(QMainWindow):
 
        
     def btn_plot5_callback(self):          # Placer l'échantillon
-        E = np.loadtxt('C:\Users\ManipBRDF\Desktop\BRDF\DjibrilBrdf\ROBOTV3\output\samples')
+        E = np.loadtxt('C:\Users\ManipBRDF\Desktop\BRDF\djabrilBrdf\ROBOTV3\output\samples')
 
         a1=0
         a1>-2.9 and a1<2.9
